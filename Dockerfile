@@ -19,8 +19,9 @@ COPY site1.conf /etc/apache2/sites-available
 COPY site1.internal.cert /etc/ssl/certs
 COPY site1.internal.key /etc/ssl/private
 
-# enable the sites
+# enable/disable the sites
 RUN a2ensite site1.conf
+RUN a2dissite 000-default.conf
 
 LABEL maintainer="monica.luong.234@my.csun.edu"
 EXPOSE 80
